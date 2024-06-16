@@ -33,6 +33,11 @@ namespace Gaish_Kyrsovaya_second
             this.mainMenuForm = mainMenu;
             this.loggedInUser = loggedInUser;
             this.profileForm = profileForm;
+            if (profileForm == null)
+            {
+                MessageBox.Show("Ошибка: Профиль не загружен. Проверьте передачу параметров.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             this.completedCourses = profileForm.CompletedCourses;
 
             CourseBtn1.Tag = "CourseBtn1";
@@ -74,17 +79,32 @@ namespace Gaish_Kyrsovaya_second
         private void AvailableTasks_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
+
             // Для первого курса
+            UpdateCourseProgress("TestMark", dungeonLabel1, materialProgressBar1);
+
+            // Для второго курса
+            UpdateCourseProgress("TestMarkSecond", dungeonLabel2, materialProgressBar2);
+
+            // Для третьего курса
+            UpdateCourseProgress("TestMarkThird", dungeonLabel3, materialProgressBar3);
+
+            // Для убирания текста "Пройдите все курсы..."
+            UpdateCourseCompletionText();
+        }
+
+        private void UpdateCourseProgress(string testMarkColumn, Label dungeonLabel, ProgressBar progressBar)
+        {
             int testMark = 0;
-            string query = $"SELECT TestMark FROM UsersInfo WHERE Login = '{loggedInUser}'";
+            string query = $"SELECT {testMarkColumn} FROM UsersInfo WHERE Login = '{loggedInUser}'";
             using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read() && reader["TestMark"] != DBNull.Value)
+                if (reader.Read() && reader[testMarkColumn] != DBNull.Value)
                 {
-                    testMark = (int)reader["TestMark"];
+                    testMark = (int)reader[testMarkColumn];
                 }
                 reader.Close();
             }
@@ -102,76 +122,16 @@ namespace Gaish_Kyrsovaya_second
                     percentage = 100;
                     break;
             }
-            dungeonLabel1.Text = $"{percentage}%";
-            materialProgressBar1.Value = (int)percentage;
+            dungeonLabel.Text = $"{percentage}%";
+            progressBar.Value = (int)percentage;
+        }
 
-            // Для второго курса
-            int testMarkSec = 0;
-            string querySec = $"SELECT TestMarkSecond FROM UsersInfo WHERE Login = '{loggedInUser}'";
-            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
-            {
-                SqlCommand command = new SqlCommand(querySec, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read() && reader["TestMarkSecond"] != DBNull.Value)
-                {
-                    testMarkSec = (int)reader["TestMarkSecond"];
-                }
-                reader.Close();
-            }
-
-            double percentageSec = 0;
-            switch (testMarkSec)
-            {
-                case 3:
-                    percentageSec = 50;
-                    break;
-                case 4:
-                    percentageSec = 75;
-                    break;
-                case 5:
-                    percentageSec = 100;
-                    break;
-            }
-            dungeonLabel2.Text = $"{percentageSec}%";
-            materialProgressBar2.Value = (int)percentageSec;
-
-            // Для третьего курса
-            int testMarkThird = 0;
-            string queryThird = $"SELECT TestMarkThird FROM UsersInfo WHERE Login = '{loggedInUser}'";
-            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
-            {
-                SqlCommand command = new SqlCommand(queryThird, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read() && reader["TestMarkThird"] != DBNull.Value)
-                {
-                    testMarkThird = (int)reader["TestMarkThird"];
-                }
-                reader.Close();
-            }
-
-            double percentageThird = 0;
-            switch (testMarkThird)
-            {
-                case 3:
-                    percentageThird = 50;
-                    break;
-                case 4:
-                    percentageThird = 75;
-                    break;
-                case 5:
-                    percentageThird = 100;
-                    break;
-            }
-            dungeonLabel3.Text = $"{percentageThird}%";
-            materialProgressBar3.Value = (int)percentageThird;
-
-            // Для убирания текста "Пройдите все курсы..."
+        private void UpdateCourseCompletionText()
+        {
             if (profileForm != null)
             {
                 int completedCourses = profileForm.CompletedCourses;
-                if (completedCourses == 3)  
+                if (completedCourses == 3)
                 {
                     dungeonHeaderLabel1.Text = "Вы прошли все курсы! Можете начинать Итоговый тест!";
                 }
@@ -182,7 +142,7 @@ namespace Gaish_Kyrsovaya_second
             }
             else
             {
-                dungeonHeaderLabel1.Text = "Ошибка: Профиль не загружен.";
+                dungeonHeaderLabel1.Text = "Ошибка: Профиль загружен некорректно.";
             }
         }
 

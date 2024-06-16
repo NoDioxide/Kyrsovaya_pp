@@ -1,0 +1,45 @@
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.csproj.AssemblyReference.cache
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.LogRegFrm.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Properties.Resources.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.csproj.GenerateResource.cache
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.csproj.CoreCompileInputs.cache
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.MainMenu.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\Gaish_Kyrsovaya_second.exe.config
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\Gaish_Kyrsovaya_second.exe
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\Gaish_Kyrsovaya_second.pdb
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\MaterialSkin.dll
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\ReaLTaiizor.dll
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\ReaLTaiizor.xml
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Ky.FD78D518.Up2Date
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.exe
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.pdb
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.About.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.AvailableTasks.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Favourite.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Profile.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Settings.resources
+C:\Users\nodio\OneDrive\Документы\Visual Studio projects\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Testing.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\Gaish_Kyrsovaya_second.exe.config
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\Gaish_Kyrsovaya_second.exe
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\Gaish_Kyrsovaya_second.pdb
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\MaterialSkin.dll
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\ReaLTaiizor.dll
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\bin\Debug\ReaLTaiizor.xml
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.csproj.AssemblyReference.cache
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.About.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.AvailableTasks.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Favourite.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.LogRegFrm.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.MainMenu.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Profile.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Properties.Resources.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Settings.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.Testing.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.csproj.GenerateResource.cache
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.csproj.CoreCompileInputs.cache
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Ky.FD78D518.Up2Date
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.exe
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.pdb
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.ForTestingTest.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.ForTestingTest2.resources
+C:\Users\nodio\Desktop\Gaish_Kyrsovaya_second\Gaish_Kyrsovaya_second\obj\Debug\Gaish_Kyrsovaya_second.SomeTrash.resources

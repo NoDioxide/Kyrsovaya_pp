@@ -20,16 +20,20 @@ namespace Gaish_Kyrsovaya_second
         MainMenu mainMenuForm;
         private string loggedInUser;
         private string currentCourse;
+        private Profile profileForm;
+        private int completedCourses;
 
         private List<System.Drawing.Image> images = new List<System.Drawing.Image>();
         private List<System.Drawing.Image> images2 = new List<System.Drawing.Image>();
         private List<System.Drawing.Image> images3 = new List<System.Drawing.Image>();
         private int currentIndex = 0;
-        public AvailableTasks(MainMenu mainMenu, string loggedInUser)
+        public AvailableTasks(MainMenu mainMenu, string loggedInUser, Profile profileForm)
         {
             InitializeComponent();
             this.mainMenuForm = mainMenu;
             this.loggedInUser = loggedInUser;
+            this.profileForm = profileForm;
+            this.completedCourses = profileForm.CompletedCourses;
 
             CourseBtn1.Tag = "CourseBtn1";
             CourseBtn2.Tag = "CourseBtn2";
@@ -70,7 +74,7 @@ namespace Gaish_Kyrsovaya_second
         private void AvailableTasks_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
-
+            // Для первого курса
             int testMark = 0;
             string query = $"SELECT TestMark FROM UsersInfo WHERE Login = '{loggedInUser}'";
             using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
@@ -100,6 +104,86 @@ namespace Gaish_Kyrsovaya_second
             }
             dungeonLabel1.Text = $"{percentage}%";
             materialProgressBar1.Value = (int)percentage;
+
+            // Для второго курса
+            int testMarkSec = 0;
+            string querySec = $"SELECT TestMarkSecond FROM UsersInfo WHERE Login = '{loggedInUser}'";
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+            {
+                SqlCommand command = new SqlCommand(querySec, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read() && reader["TestMarkSecond"] != DBNull.Value)
+                {
+                    testMarkSec = (int)reader["TestMarkSecond"];
+                }
+                reader.Close();
+            }
+
+            double percentageSec = 0;
+            switch (testMarkSec)
+            {
+                case 3:
+                    percentageSec = 50;
+                    break;
+                case 4:
+                    percentageSec = 75;
+                    break;
+                case 5:
+                    percentageSec = 100;
+                    break;
+            }
+            dungeonLabel2.Text = $"{percentageSec}%";
+            materialProgressBar2.Value = (int)percentageSec;
+
+            // Для третьего курса
+            int testMarkThird = 0;
+            string queryThird = $"SELECT TestMarkThird FROM UsersInfo WHERE Login = '{loggedInUser}'";
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+            {
+                SqlCommand command = new SqlCommand(queryThird, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read() && reader["TestMarkThird"] != DBNull.Value)
+                {
+                    testMarkThird = (int)reader["TestMarkThird"];
+                }
+                reader.Close();
+            }
+
+            double percentageThird = 0;
+            switch (testMarkThird)
+            {
+                case 3:
+                    percentageThird = 50;
+                    break;
+                case 4:
+                    percentageThird = 75;
+                    break;
+                case 5:
+                    percentageThird = 100;
+                    break;
+            }
+            dungeonLabel3.Text = $"{percentageThird}%";
+            materialProgressBar3.Value = (int)percentageThird;
+
+            // Для убирания текста "Пройдите все курсы..."
+            if (profileForm != null)
+            {
+                int completedCourses = profileForm.CompletedCourses;
+                if (completedCourses == 3)  
+                {
+                    dungeonHeaderLabel1.Text = "Вы прошли все курсы! Можете начинать Итоговый тест!";
+                }
+                else
+                {
+                    dungeonHeaderLabel1.Text = $"Вы прошли {completedCourses} из 3 курсов. \nПройдите все курсы, чтобы получить доступ к Тестированию!";
+                }
+            }
+            else
+            {
+                dungeonHeaderLabel1.Text = "Ошибка: Профиль не загружен.";
+            }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -300,124 +384,453 @@ namespace Gaish_Kyrsovaya_second
             }
             else if (currentCourse == "CourseBtn2")
             {
-                
+                PBCourse1.Visible = false;
+                PBCourse2.Visible = false;
+                PBCourse3.Visible = false;
+                PBCorrect.Visible = false;
+                PBUncorrect.Visible = false;
+                btnPrev.Visible = false;
+                btnNext.Visible = false;
+                btnToTest.Visible = false;
+
+                CBCorrect1.Visible = true;
+                CBCorrect2.Visible = true;
+                btnNextQuest.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+                materialLabel2.Visible = true;
+                materialLabel3.Visible = true;
+                materialCheckbox2.Visible = true;
+                materialCheckbox3.Visible = true;
+                materialCheckbox4.Visible = true;
+                materialCheckbox5.Visible = true;
+                materialCheckbox6.Visible = true;
+                materialCheckbox8.Visible = true;
+
+                CBCorrect1.Text = "Представляют действия и операции.";
+                CBCorrect2.Text = "Для описания логических проверок и ветвлений в программе.";
+                materialLabel2.Text = "Вопрос 1: \nКакие функции выполняют прямоугольники в блок-схемах?";
+                materialLabel3.Text = "Вопрос 2: \nДля чего используются блоки условий в блок-схемах?";
+                materialCheckbox2.Text = "Отображают условия и проверки.";
+                materialCheckbox3.Text = "Определяют поток управления.";
+                materialCheckbox4.Text = "Показывают входные данные.";
+                materialCheckbox5.Text = "Для выполнения арифметических операций.";
+                materialCheckbox6.Text = "Для создания списков и массивов.";
+                materialCheckbox8.Text = "Для генерации случайных чисел.";
             }
             else if (currentCourse == "CourseBtn3")
             {
-                
+                PBCourse1.Visible = false;
+                PBCourse2.Visible = false;
+                PBCourse3.Visible = false;
+                PBCorrect.Visible = false;
+                PBUncorrect.Visible = false;
+                btnPrev.Visible = false;
+                btnNext.Visible = false;
+                btnToTest.Visible = false;
+
+                CBCorrect1.Visible = true;
+                CBCorrect2.Visible = true;
+                btnNextQuest.Visible = true;
+                button2.Visible = true;
+                button3.Visible = true;
+                materialLabel2.Visible = true;
+                materialLabel3.Visible = true;
+                materialCheckbox2.Visible = true;
+                materialCheckbox3.Visible = true;
+                materialCheckbox4.Visible = true;
+                materialCheckbox5.Visible = true;
+                materialCheckbox6.Visible = true;
+                materialCheckbox8.Visible = true;
+
+                CBCorrect1.Text = "Для разработки алгоритмов и решения сложных задач.";
+                CBCorrect2.Text = "Сокращение шагов и повышение их читаемости.";
+                materialLabel2.Text = "Вопрос 1: \nДля каких целей используются блок-схемы?";
+                materialLabel3.Text = "Вопрос 2: \nЧто включает в себя оптимизация блок-схем?";
+                materialCheckbox2.Text = "Для создания графических дизайнов.";
+                materialCheckbox3.Text = "Для анализа социологических данных.";
+                materialCheckbox4.Text = "Для обучения иностранным языкам.";
+                materialCheckbox5.Text = "Увеличение количества условынх операторов.";
+                materialCheckbox6.Text = "Добавление дополнительных действий.";
+                materialCheckbox8.Text = "Изменение порядка выполнения операций.";
             }
         }
 
         private void btnNextQuest_Click(object sender, EventArgs e)
         {
-            CBCorrect1.Visible = false;
-            CBCorrect2.Visible = false;
-            btnNextQuest.Visible = false;
-            button2.Visible = false;
-            button3.Visible = false;
-            materialLabel1.Visible = false;
-            materialLabel2.Visible = false;
-            materialLabel3.Visible = false;
-            materialCheckbox2.Visible = false;
-            materialCheckbox3.Visible = false;
-            materialCheckbox4.Visible = false;
-            materialCheckbox5.Visible = false;
-            materialCheckbox6.Visible = false;
-            materialCheckbox8.Visible = false;
+            MaterialButton clickedButton = sender as MaterialButton;
+            if (currentCourse == "CourseBtn1")
+            {
+                CBCorrect1.Visible = false;
+                CBCorrect2.Visible = false;
+                btnNextQuest.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                materialLabel1.Visible = false;
+                materialLabel2.Visible = false;
+                materialLabel3.Visible = false;
+                materialCheckbox2.Visible = false;
+                materialCheckbox3.Visible = false;
+                materialCheckbox4.Visible = false;
+                materialCheckbox5.Visible = false;
+                materialCheckbox6.Visible = false;
+                materialCheckbox8.Visible = false;
 
-            materialLabel4.Visible = true;
-            materialLabel5.Visible = true;
-            button4.Visible = true;
-            button5.Visible = true;
-            CBCorrect3.Visible = true;
-            CBCorrect4.Visible = true;
-            materialCheckbox9.Visible = true;
-            materialCheckbox11.Visible = true;
-            materialCheckbox12.Visible = true;
-            materialCheckbox14.Visible = true;
-            materialCheckbox15.Visible = true;
-            materialCheckbox16.Visible = true;
-            btnNextNextQuest.Visible = true;
+                materialLabel4.Visible = true;
+                materialLabel5.Visible = true;
+                button4.Visible = true;
+                button5.Visible = true;
+                CBCorrect3.Visible = true;
+                CBCorrect4.Visible = true;
+                materialCheckbox9.Visible = true;
+                materialCheckbox11.Visible = true;
+                materialCheckbox12.Visible = true;
+                materialCheckbox14.Visible = true;
+                materialCheckbox15.Visible = true;
+                materialCheckbox16.Visible = true;
+                btnNextNextQuest.Visible = true;
+            }
+            else if (currentCourse == "CourseBtn2")
+            {
+                CBCorrect1.Visible = false;
+                CBCorrect2.Visible = false;
+                btnNextQuest.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                materialLabel1.Visible = false;
+                materialLabel2.Visible = false;
+                materialLabel3.Visible = false;
+                materialCheckbox2.Visible = false;
+                materialCheckbox3.Visible = false;
+                materialCheckbox4.Visible = false;
+                materialCheckbox5.Visible = false;
+                materialCheckbox6.Visible = false;
+                materialCheckbox8.Visible = false;
+
+                materialLabel4.Visible = true;
+                materialLabel5.Visible = true;
+                button4.Visible = true;
+                button5.Visible = true;
+                CBCorrect3.Visible = true;
+                CBCorrect4.Visible = true;
+                materialCheckbox9.Visible = true;
+                materialCheckbox11.Visible = true;
+                materialCheckbox12.Visible = true;
+                materialCheckbox14.Visible = true;
+                materialCheckbox15.Visible = true;
+                materialCheckbox16.Visible = true;
+                btnNextNextQuest.Visible = true;
+
+                materialLabel4.Text = "Вопрос 3: \nКакую функцию выполняют стрелки в блок-схемах?";
+                materialLabel5.Text = "Вопрос 4: \nЧем отличаются сложные блок-схемы от простых?";
+                CBCorrect3.Text = "Определяют направление потока упралвения.";
+                CBCorrect4.Text = "Комбинацией различных элементов для описания сложных алгоритмов.";
+                materialCheckbox9.Text = "Показывают входные и выходные данные.";
+                materialCheckbox11.Text = "Обозначают порядок операций.";
+                materialCheckbox12.Text = "Устанавливают зависимтости между переменными.";
+                materialCheckbox14.Text = "Большим количеством цветов.";
+                materialCheckbox15.Text = "Дополнительными изображениями.";
+                materialCheckbox16.Text = "Использованием кривых линий.";
+            }
+            else if (currentCourse == "CourseBtn3")
+            {
+                CBCorrect1.Visible = false;
+                CBCorrect2.Visible = false;
+                btnNextQuest.Visible = false;
+                button2.Visible = false;
+                button3.Visible = false;
+                materialLabel1.Visible = false;
+                materialLabel2.Visible = false;
+                materialLabel3.Visible = false;
+                materialCheckbox2.Visible = false;
+                materialCheckbox3.Visible = false;
+                materialCheckbox4.Visible = false;
+                materialCheckbox5.Visible = false;
+                materialCheckbox6.Visible = false;
+                materialCheckbox8.Visible = false;
+
+                materialLabel4.Visible = true;
+                materialLabel5.Visible = true;
+                button4.Visible = true;
+                button5.Visible = true;
+                CBCorrect3.Visible = true;
+                CBCorrect4.Visible = true;
+                materialCheckbox9.Visible = true;
+                materialCheckbox11.Visible = true;
+                materialCheckbox12.Visible = true;
+                materialCheckbox14.Visible = true;
+                materialCheckbox15.Visible = true;
+                materialCheckbox16.Visible = true;
+                btnNextNextQuest.Visible = true;
+
+                materialLabel5.Text = "Вопрос 4: \nВ чём заключается преимущество работы с подпрограммами и функциями в блок-схемах?";
+                materialLabel4.Text = "Вопрос 3: \nКакую информацию можно получить из анализа временной и пространственной сложности алгоритмов с помощью блок-схем?";
+                CBCorrect3.Text = "Оценить их эффективность.";
+                CBCorrect4.Text = "Упрощение структуры и повышение повтороного использования.";
+                materialCheckbox9.Text = "Определить цветовую гамму.";
+                materialCheckbox11.Text = "Изучить их историю.";
+                materialCheckbox12.Text = "Определить вощможные ошибки.";
+                materialCheckbox14.Text = "Увеличение сложности алгоритма.";
+                materialCheckbox15.Text = "Уменьшение проивзодительности.";
+                materialCheckbox16.Text = "Усложнение анализа.";
+            }
         }
 
         private void btnNextNextQuest_Click(object sender, EventArgs e)
         {
-            materialLabel4.Visible = false;
-            materialLabel5.Visible = false;
-            button4.Visible = false;
-            button5.Visible = false;
-            CBCorrect3.Visible = false;
-            CBCorrect4.Visible = false;
-            materialCheckbox9.Visible = false;
-            materialCheckbox11.Visible = false;
-            materialCheckbox12.Visible = false;
-            materialCheckbox14.Visible = false;
-            materialCheckbox15.Visible = false;
-            materialCheckbox16.Visible = false;
-            btnNextNextQuest.Visible = false;
+            MaterialButton clickedButton = sender as MaterialButton;
+            if (currentCourse == "CourseBtn1")
+            {
+                materialLabel4.Visible = false;
+                materialLabel5.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                CBCorrect3.Visible = false;
+                CBCorrect4.Visible = false;
+                materialCheckbox9.Visible = false;
+                materialCheckbox11.Visible = false;
+                materialCheckbox12.Visible = false;
+                materialCheckbox14.Visible = false;
+                materialCheckbox15.Visible = false;
+                materialCheckbox16.Visible = false;
+                btnNextNextQuest.Visible = false;
 
-            materialLabel6.Visible = true;
-            button6.Visible = true;
-            CBCorrect5.Visible = true;
-            materialCheckbox17.Visible = true;
-            materialCheckbox18.Visible = true;
-            materialCheckbox19.Visible = true;
-            btnTestEnd.Visible = true;
+                materialLabel6.Visible = true;
+                button6.Visible = true;
+                CBCorrect5.Visible = true;
+                materialCheckbox17.Visible = true;
+                materialCheckbox18.Visible = true;
+                materialCheckbox19.Visible = true;
+                btnTestEnd.Visible = true;
+            }
+            else if (currentCourse == "CourseBtn2")
+            {
+                materialLabel4.Visible = false;
+                materialLabel5.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                CBCorrect3.Visible = false;
+                CBCorrect4.Visible = false;
+                materialCheckbox9.Visible = false;
+                materialCheckbox11.Visible = false;
+                materialCheckbox12.Visible = false;
+                materialCheckbox14.Visible = false;
+                materialCheckbox15.Visible = false;
+                materialCheckbox16.Visible = false;
+                btnNextNextQuest.Visible = false;
+
+                materialLabel6.Visible = true;
+                button6.Visible = true;
+                CBCorrect5.Visible = true;
+                materialCheckbox17.Visible = true;
+                materialCheckbox18.Visible = true;
+                materialCheckbox19.Visible = true;
+                btnTestEnd.Visible = true;
+
+                materialLabel6.Text = "Вопрос 5: \nВ чём заключается практическая польза от упражнений по построению блок-схем для конкретных задач?";
+                CBCorrect5.Text = "Помогают на практике закрепить знания о построении блок-схем.";
+                materialCheckbox17.Text = "Создают готовые программы.";
+                materialCheckbox18.Text = "Обучают математике.";
+                materialCheckbox19.Text = "Улучшают физическую форму.";
+            }
+            else if (currentCourse == "CourseBtn3")
+            {
+                materialLabel4.Visible = false;
+                materialLabel5.Visible = false;
+                button4.Visible = false;
+                button5.Visible = false;
+                CBCorrect3.Visible = false;
+                CBCorrect4.Visible = false;
+                materialCheckbox9.Visible = false;
+                materialCheckbox11.Visible = false;
+                materialCheckbox12.Visible = false;
+                materialCheckbox14.Visible = false;
+                materialCheckbox15.Visible = false;
+                materialCheckbox16.Visible = false;
+                btnNextNextQuest.Visible = false;
+
+                materialLabel6.Visible = true;
+                button6.Visible = true;
+                CBCorrect5.Visible = true;
+                materialCheckbox17.Visible = true;
+                materialCheckbox18.Visible = true;
+                materialCheckbox19.Visible = true;
+                btnTestEnd.Visible = true;
+
+                materialLabel6.Text = "Вопрос 5: \nКакие навыки можно улучшить через практические задания на оптимизацию и анализ готовых блок-схем?";
+                CBCorrect5.Text = "навыки программирования и разработки алгоритмов.";
+                materialCheckbox17.Text = "Навыки рисования.";
+                materialCheckbox18.Text = "Музыкальные способности.";
+                materialCheckbox19.Text = "Знание иностранных языков.";
+            }
         }
 
         private void btnTestEnd_Click(object sender, EventArgs e)
         {
-            btnTestEnd.Visible = false;
-            materialLabel6.Visible = false;
-            button6.Visible = false;
-            CBCorrect5.Visible = false;
-            materialCheckbox17.Visible = false;
-            materialCheckbox18.Visible = false;
-            materialCheckbox19.Visible = false;
-
-            materialLabel1.Visible = true;
-            btnBacktoStart.Visible = true;
-
-            int points = 0;
-            if(CBCorrect1.Checked == true && materialCheckbox2.Checked == false && materialCheckbox3.Checked == false && materialCheckbox4.Checked == false)
+            if (currentCourse == "CourseBtn1")
             {
-                points++;
-                materialLabel1.Text = "Ваша оценка: " + points;
-            }
-            if (CBCorrect2.Checked == true && materialCheckbox5.Checked == false && materialCheckbox6.Checked == false && materialCheckbox8.Checked == false)
-            {
+                btnTestEnd.Visible = false;
+                materialLabel6.Visible = false;
+                button6.Visible = false;
+                CBCorrect5.Visible = false;
+                materialCheckbox17.Visible = false;
+                materialCheckbox18.Visible = false;
+                materialCheckbox19.Visible = false;
+
+                materialLabel1.Visible = true;
+                btnBacktoStart.Visible = true;
+
+                int points = 0;
+                if (CBCorrect1.Checked == true && materialCheckbox2.Checked == false && materialCheckbox3.Checked == false && materialCheckbox4.Checked == false)
+                {
                     points++;
-                materialLabel1.Text = "Ваша оценка: " + points;
-            }
-            if (CBCorrect3.Checked == true && materialCheckbox9.Checked == false && materialCheckbox11.Checked == false && materialCheckbox12.Checked == false)
-            {
-                points++;
-                materialLabel1.Text = "Ваша оценка: " + points;
-            }
-            if (CBCorrect4.Checked == true && materialCheckbox14.Checked == false && materialCheckbox15.Checked == false && materialCheckbox16.Checked == false)
-            {
-                points++;
-                materialLabel1.Text = "Ваша оценка: " + points;
-            }
-            if (CBCorrect5.Checked == true && materialCheckbox17.Checked == false && materialCheckbox18.Checked == false && materialCheckbox19.Checked == false)
-            {
-                points++;
-                materialLabel1.Text = "Ваша оценка: " + points;
-            }
-            if(points <= 2)
-            {
-                points = 2;
-                materialLabel1.Text = "Ваша оценка: " + points;
-            }
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect2.Checked == true && materialCheckbox5.Checked == false && materialCheckbox6.Checked == false && materialCheckbox8.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect3.Checked == true && materialCheckbox9.Checked == false && materialCheckbox11.Checked == false && materialCheckbox12.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect4.Checked == true && materialCheckbox14.Checked == false && materialCheckbox15.Checked == false && materialCheckbox16.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect5.Checked == true && materialCheckbox17.Checked == false && materialCheckbox18.Checked == false && materialCheckbox19.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (points <= 2)
+                {
+                    points = 2;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
 
-            string updateQuery = $"UPDATE UsersInfo SET TestMark = @TestMark WHERE Login = @Login";
-            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+                string updateQuery = $"UPDATE UsersInfo SET TestMark = @TestMark WHERE Login = @Login";
+                using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(updateQuery, connection);
+                    command.Parameters.AddWithValue("@TestMark", points);
+                    command.Parameters.AddWithValue("@Login", loggedInUser);
+                    command.ExecuteNonQuery();
+                }
+            }
+            else if (currentCourse == "CourseBtn2")
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(updateQuery, connection);
-                command.Parameters.AddWithValue("@TestMark", points);
-                command.Parameters.AddWithValue("@Login", loggedInUser);
-                command.ExecuteNonQuery();
+                btnTestEnd.Visible = false;
+                materialLabel6.Visible = false;
+                button6.Visible = false;
+                CBCorrect5.Visible = false;
+                materialCheckbox17.Visible = false;
+                materialCheckbox18.Visible = false;
+                materialCheckbox19.Visible = false;
+
+                materialLabel1.Visible = true;
+                btnBacktoStart.Visible = true;
+
+                int points = 0;
+                if (CBCorrect1.Checked == true && materialCheckbox2.Checked == false && materialCheckbox3.Checked == false && materialCheckbox4.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect2.Checked == true && materialCheckbox5.Checked == false && materialCheckbox6.Checked == false && materialCheckbox8.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect3.Checked == true && materialCheckbox9.Checked == false && materialCheckbox11.Checked == false && materialCheckbox12.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect4.Checked == true && materialCheckbox14.Checked == false && materialCheckbox15.Checked == false && materialCheckbox16.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect5.Checked == true && materialCheckbox17.Checked == false && materialCheckbox18.Checked == false && materialCheckbox19.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (points <= 2)
+                {
+                    points = 2;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+
+                string updateQuery = $"UPDATE UsersInfo SET TestMarkSecond = @TestMarkSecond WHERE Login = @Login";
+                using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(updateQuery, connection);
+                    command.Parameters.AddWithValue("@TestMarkSecond", points);
+                    command.Parameters.AddWithValue("@Login", loggedInUser);
+                    command.ExecuteNonQuery();
+                }
+            }
+            else if (currentCourse == "CourseBtn3")
+            {
+                btnTestEnd.Visible = false;
+                materialLabel6.Visible = false;
+                button6.Visible = false;
+                CBCorrect5.Visible = false;
+                materialCheckbox17.Visible = false;
+                materialCheckbox18.Visible = false;
+                materialCheckbox19.Visible = false;
+
+                materialLabel1.Visible = true;
+                btnBacktoStart.Visible = true;
+
+                int points = 0;
+                if (CBCorrect1.Checked == true && materialCheckbox2.Checked == false && materialCheckbox3.Checked == false && materialCheckbox4.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect2.Checked == true && materialCheckbox5.Checked == false && materialCheckbox6.Checked == false && materialCheckbox8.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect3.Checked == true && materialCheckbox9.Checked == false && materialCheckbox11.Checked == false && materialCheckbox12.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect4.Checked == true && materialCheckbox14.Checked == false && materialCheckbox15.Checked == false && materialCheckbox16.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (CBCorrect5.Checked == true && materialCheckbox17.Checked == false && materialCheckbox18.Checked == false && materialCheckbox19.Checked == false)
+                {
+                    points++;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+                if (points <= 2)
+                {
+                    points = 2;
+                    materialLabel1.Text = "Ваша оценка: " + points;
+                }
+
+                string updateQuery = $"UPDATE UsersInfo SET TestMarkThird = @TestMarkThird WHERE Login = @Login";
+                using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(updateQuery, connection);
+                    command.Parameters.AddWithValue("@TestMarkThird", points);
+                    command.Parameters.AddWithValue("@Login", loggedInUser);
+                    command.ExecuteNonQuery();
+                }
             }
         }
 

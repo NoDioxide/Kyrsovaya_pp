@@ -154,7 +154,7 @@ namespace Gaish_Kyrsovaya_second
         {
             if (avTasks == null)
             {
-                avTasks = new AvailableTasks(this, loggedInUser);
+                avTasks = new AvailableTasks(this, loggedInUser, prof);
                 avTasks.FormClosed += AvailableTasks_FormClosed;
                 avTasks.MdiParent = this;
                 avTasks.Dock = DockStyle.Fill;

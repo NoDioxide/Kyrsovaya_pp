@@ -52,9 +52,9 @@
             this.labelInfo.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelInfo.Location = new System.Drawing.Point(19, 12);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(371, 90);
+            this.labelInfo.Size = new System.Drawing.Size(363, 90);
             this.labelInfo.TabIndex = 0;
-            this.labelInfo.Text = "Работу выполняет студент 3-го курса\r\nВдовин Денис Александрович\r\n307 группы";
+            this.labelInfo.Text = "Работу выполнил студент 3-го курса\r\nВдовин Денис Александрович\r\nгруппы ИСП-307 ";
             // 
             // labelInfo2
             // 

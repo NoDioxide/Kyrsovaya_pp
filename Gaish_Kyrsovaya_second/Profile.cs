@@ -17,7 +17,13 @@ namespace Gaish_Kyrsovaya_second
     public partial class Profile : Form
     {
         private string loggedInUser;
+        private int completedCourses;
 
+        public int CompletedCourses
+        {
+            get { return completedCourses; }
+            set { completedCourses = value; }
+        }
         public Profile(string loggedInUser)
         {
             InitializeComponent();
@@ -128,7 +134,7 @@ namespace Gaish_Kyrsovaya_second
 
             LoadUserInfo();
         }
-        private void LoadCourseCompletion()
+        /*private void LoadCourseCompletion()
         {
             int completedCourses = 0;
 
@@ -151,6 +157,73 @@ namespace Gaish_Kyrsovaya_second
             }
 
             // Обновление текста dungeonHeaderLabel1 с учетом количества пройденных курсов
+            dungeonHeaderLabel1.Text = $"Пройдено курсов {completedCourses}/3";
+        }*/
+
+        private void LoadCourseCompletion()
+        {
+            int completedCourses = 0;
+
+            string query = $"SELECT TestMark FROM UsersInfo WHERE Login = '{loggedInUser}'";
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(reader.GetOrdinal("TestMark")))
+                    {
+                        int testMark = (int)reader["TestMark"];
+                        if (testMark >= 4)
+                        {
+                            completedCourses++;
+                        }
+                    }
+                }
+                reader.Close();
+            }
+            string querySec = $"SELECT TestMarkSecond FROM UsersInfo WHERE Login = '{loggedInUser}'";
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+            {
+                SqlCommand command = new SqlCommand(querySec, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(reader.GetOrdinal("TestMarkSecond")))
+                    {
+                        int testMarkSec = (int)reader["TestMarkSecond"];
+                        if (testMarkSec >= 4)
+                        {
+                            completedCourses++;
+                        }
+                    }
+                }
+                reader.Close();
+            }
+            string queryThird = $"SELECT TestMarkThird FROM UsersInfo WHERE Login = '{loggedInUser}'";
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
+            {
+                SqlCommand command = new SqlCommand(queryThird, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(reader.GetOrdinal("TestMarkThird")))
+                    {
+                        int testMarkThird = (int)reader["TestMarkThird"];
+                        if (testMarkThird >= 4)
+                        {
+                            completedCourses++;
+                        }
+                    }
+                }
+                reader.Close();
+            }
+
+            //CompletedCourses = completedCourses;
+            this.completedCourses = completedCourses;
             dungeonHeaderLabel1.Text = $"Пройдено курсов {completedCourses}/3";
         }
     }

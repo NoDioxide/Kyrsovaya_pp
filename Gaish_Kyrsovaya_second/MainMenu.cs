@@ -152,9 +152,15 @@ namespace Gaish_Kyrsovaya_second
 
         private void btnTasks_Click(object sender, EventArgs e)
         {
+            if (prof == null)
+            {
+                MessageBox.Show("Пожалуйста, сначала откройте профиль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             if (avTasks == null)
             {
-                avTasks = new AvailableTasks(this, loggedInUser, prof);
+                avTasks = new AvailableTasks(this, loggedInUser, prof, test);
                 avTasks.FormClosed += AvailableTasks_FormClosed;
                 avTasks.MdiParent = this;
                 avTasks.Dock = DockStyle.Fill;
@@ -213,21 +219,36 @@ namespace Gaish_Kyrsovaya_second
             this.Close();
         }
 
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            base.OnFormClosed(e);
+            LogRegFrm logRegFrm = new LogRegFrm();
+            logRegFrm.Show();
+        }
+
         private void btnTest_Click(object sender, EventArgs e)
         {
             if (test == null)
             {
-                test = new Testing();
-                test.FormClosed += Test_FormClosed;
-                test.MdiParent = this;
-                test.Dock = DockStyle.Fill;
-                test.Show();
+                if (avTasks != null)
+                {
+                    test = new Testing(avTasks.GetCompletedCourses());
+                    test.FormClosed += Test_FormClosed;
+                    test.MdiParent = this;
+                    test.Dock = DockStyle.Fill;
+                    test.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Для открытия тестирования необходимо сначала открыть задания.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
                 test.Activate();
             }
         }
+
 
         private void Test_FormClosed(object sender, FormClosedEventArgs e)
         {

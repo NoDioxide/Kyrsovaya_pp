@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MaterialSkin;
-using System.Windows.Forms;
-using MaterialSkin.Controls;
 using System.Data.SqlClient;
-using ReaLTaiizor.Controls;
+using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Gaish_Kyrsovaya_second
 {
@@ -19,6 +11,7 @@ namespace Gaish_Kyrsovaya_second
         DataBase database = new DataBase();
 
         public event EventHandler<string> UserLoggedIn;
+
         public LogRegFrm()
         {
             InitializeComponent();
@@ -37,42 +30,55 @@ namespace Gaish_Kyrsovaya_second
             var logUser = UserTB.Text;
             var passUser = PassTB.Text;
 
-            /*SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable table = new DataTable();*/
+            if (string.IsNullOrEmpty(logUser) || string.IsNullOrEmpty(passUser))
+            {
+                MessageBox.Show("Пожалуйста, введите логин и пароль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            string userInfoQuery = $"SELECT ProfilePhoto, FirstName, LastName, Status FROM UsersInfo WHERE Login = '{logUser}'";
+            string query = $"SELECT COUNT(*) FROM UsersInfo WHERE Login = @logUser AND Password = @passUser";
             using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-7QTLDNV\SQLEXPRESS;Initial Catalog=Kyrsovaya;Integrated Security=True"))
             {
-                SqlCommand command = new SqlCommand(userInfoQuery, connection);
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@logUser", logUser);
+                command.Parameters.AddWithValue("@passUser", passUser);
                 connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-                if (reader.Read())
+                int userCount = (int)command.ExecuteScalar();
+                if (userCount > 0)
                 {
-                    // Создаем объект для хранения данных пользователя
-                    UserInfo loggedInUser = new UserInfo();
-                    if (reader["ProfilePhoto"] != DBNull.Value)
+                    string userInfoQuery = $"SELECT ProfilePhoto, FirstName, LastName, Status FROM UsersInfo WHERE Login = @logUser";
+                    SqlCommand userInfoCommand = new SqlCommand(userInfoQuery, connection);
+                    userInfoCommand.Parameters.AddWithValue("@logUser", logUser);
+                    SqlDataReader reader = userInfoCommand.ExecuteReader();
+                    if (reader.Read())
                     {
-                        loggedInUser.ProfilePhoto = (byte[])reader["ProfilePhoto"];
-                    }
-                    else
-                    {
-                        loggedInUser.ProfilePhoto = null;
-                    }
-                    loggedInUser.FirstName = reader["FirstName"].ToString();
-                    loggedInUser.LastName = reader["LastName"].ToString();
-                    loggedInUser.Status = reader["Status"].ToString();
+                        UserInfo loggedInUser = new UserInfo();
+                        if (reader["ProfilePhoto"] != DBNull.Value)
+                        {
+                            loggedInUser.ProfilePhoto = (byte[])reader["ProfilePhoto"];
+                        }
+                        else
+                        {
+                            loggedInUser.ProfilePhoto = null;
+                        }
+                        loggedInUser.FirstName = reader["FirstName"].ToString();
+                        loggedInUser.LastName = reader["LastName"].ToString();
+                        loggedInUser.Status = reader["Status"].ToString();
 
-                    MainMenu MM = new MainMenu(logUser);
-                    this.Hide();
-                    MM.ShowDialog();
-                    this.Show();
+                        MessageBox.Show("Успешный вход в аккаунт!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        MainMenu MM = new MainMenu(logUser);
+                        MM.FormClosed += MainMenu_FormClosed; 
+                        this.Hide();
+                        MM.ShowDialog();
+                    }
+                    reader.Close();
+                    UserLoggedIn?.Invoke(this, logUser);
                 }
                 else
                 {
-                    MessageBox.Show("Пользователь не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                reader.Close();
-                UserLoggedIn?.Invoke(this, logUser);
             }
         }
 
@@ -107,7 +113,7 @@ namespace Gaish_Kyrsovaya_second
             var regUser = UserTB.Text;
             var regPass = PassTB.Text;
 
-            if (string.IsNullOrEmpty(regUser) && string.IsNullOrEmpty(regPass))
+            if (string.IsNullOrEmpty(regUser) || string.IsNullOrEmpty(regPass))
             {
                 MessageBox.Show("Ошибка при вводе данных", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 database.closeConnection();
@@ -125,12 +131,17 @@ namespace Gaish_Kyrsovaya_second
                 return;
             }
 
-            var addQuery = $"insert into UsersInfo (Login, Password) values ('{regUser}', '{regPass}')";
+            var addQuery = $"INSERT INTO UsersInfo (Login, Password) VALUES ('{regUser}', '{regPass}')";
             var addcommand = new SqlCommand(addQuery, database.GetConnection());
             addcommand.ExecuteNonQuery();
 
             MessageBox.Show("Учётная запись создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             database.closeConnection();
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show();
         }
     }
 }

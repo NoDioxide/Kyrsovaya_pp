@@ -22,22 +22,26 @@ namespace Gaish_Kyrsovaya_second
         private string currentCourse;
         private Profile profileForm;
         private int completedCourses;
+        private Testing testingForm;
 
         private List<System.Drawing.Image> images = new List<System.Drawing.Image>();
         private List<System.Drawing.Image> images2 = new List<System.Drawing.Image>();
         private List<System.Drawing.Image> images3 = new List<System.Drawing.Image>();
         private int currentIndex = 0;
-        public AvailableTasks(MainMenu mainMenu, string loggedInUser, Profile profileForm)
+        public AvailableTasks(MainMenu mainMenu, string loggedInUser, Profile profileForm, Testing testingForm)
         {
             InitializeComponent();
             this.mainMenuForm = mainMenu;
             this.loggedInUser = loggedInUser;
             this.profileForm = profileForm;
+            this.testingForm = testingForm;
+            
             if (profileForm == null)
             {
                 MessageBox.Show("Ошибка: Профиль не загружен. Проверьте передачу параметров.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             this.completedCourses = profileForm.CompletedCourses;
 
             CourseBtn1.Tag = "CourseBtn1";
@@ -80,6 +84,12 @@ namespace Gaish_Kyrsovaya_second
         {
             this.ControlBox = false;
 
+            if (profileForm == null)
+            {
+                dungeonHeaderLabel1.Text = "Ошибка: Профиль не загружен.";
+                return;
+            }
+
             // Для первого курса
             UpdateCourseProgress("TestMark", dungeonLabel1, materialProgressBar1);
 
@@ -91,6 +101,7 @@ namespace Gaish_Kyrsovaya_second
 
             // Для убирания текста "Пройдите все курсы..."
             UpdateCourseCompletionText();
+
         }
 
         private void UpdateCourseProgress(string testMarkColumn, Label dungeonLabel, ProgressBar progressBar)
@@ -134,6 +145,11 @@ namespace Gaish_Kyrsovaya_second
                 if (completedCourses == 3)
                 {
                     dungeonHeaderLabel1.Text = "Вы прошли все курсы! Можете начинать Итоговый тест!";
+
+                    if (testingForm != null && testingForm.JustLabel != null)
+                    {
+                        testingForm.JustLabel.Text = "Нажмите на кнопку, чтобы начать Итоговый тест!";
+                    }
                 }
                 else
                 {
@@ -144,6 +160,11 @@ namespace Gaish_Kyrsovaya_second
             {
                 dungeonHeaderLabel1.Text = "Ошибка: Профиль загружен некорректно.";
             }
+        }
+
+        public int GetCompletedCourses()
+        {
+            return completedCourses;
         }
 
         private void btnNext_Click(object sender, EventArgs e)

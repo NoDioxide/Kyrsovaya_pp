@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|c:\\users\\nodio\\desktop\\gaish_kyrsovaya_second\\gaish_kyrsovaya_second\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,24 +19,16 @@
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\testing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|c:\\users\\nodio\\desktop\\gaish_kyrsovaya_second\\gaish_kyrsovaya_second\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|c:\\users\\nodio\\desktop\\gaish_kyrsovaya_second\\gaish_kyrsovaya_second\\availabletasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\availabletasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\availabletasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\availabletasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\availabletasks.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\logregfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\profile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|c:\\users\\nodio\\desktop\\gaish_kyrsovaya_second\\gaish_kyrsovaya_second\\testing.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\gaish_kyrsovaya_second\\testing.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{42AAF7DF-C283-44C7-8A29-482D6498C8FF}|Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second.csproj|solutionrelative:gaish_kyrsovaya_second\\testing.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -74,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Testing.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Testing.cs",
               "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\Testing.cs",
@@ -98,19 +98,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Testing.cs",
-              "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Testing.cs",
-              "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\Testing.cs",
-              "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Testing.cs",
-              "RelativeToolTip": "Gaish_Kyrsovaya_second\\Testing.cs",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAIwGsAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T17:20:16.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 7,
               "Title": "LogRegFrm.cs",
               "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\LogRegFrm.cs",
@@ -119,12 +106,11 @@
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\LogRegFrm.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T20:32:49.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T20:32:49.638Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainMenu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\MainMenu.cs",
               "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\MainMenu.cs",
@@ -136,19 +122,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\MainMenu.cs",
+              "RelativeToolTip": "Gaish_Kyrsovaya_second\\MainMenu.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAAAEAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T20:43:34.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AvailableTasks.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\AvailableTasks.cs",
               "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\AvailableTasks.cs",
               "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\AvailableTasks.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\AvailableTasks.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T11:20:11.934Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2024-04-15T11:20:11.934Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AvailableTasks.cs",
               "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\AvailableTasks.cs",
               "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\AvailableTasks.cs",
@@ -156,20 +154,30 @@
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\AvailableTasks.cs",
               "ViewState": "AQIAAIkCAAAAAAAAAAAAALUCAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-15T11:20:49.519Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-15T11:20:49.519Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Settings.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Settings.cs",
               "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\Settings.cs",
               "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Settings.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\Settings.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T18:44:58.142Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2024-06-16T18:44:58.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Testing.cs",
+              "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Testing.cs",
+              "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\Testing.cs",
+              "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Testing.cs",
+              "RelativeToolTip": "Gaish_Kyrsovaya_second\\Testing.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAIwGsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T17:20:16.569Z"
             },
             {
               "$type": "Document",
@@ -181,21 +189,7 @@
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\Profile.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T20:33:27.18Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\MainMenu.cs",
-              "RelativeDocumentMoniker": "Gaish_Kyrsovaya_second\\MainMenu.cs",
-              "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\MainMenu.cs",
-              "RelativeToolTip": "Gaish_Kyrsovaya_second\\MainMenu.cs",
-              "ViewState": "AQIAANkAAAAAAAAAAADgv+kAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T20:43:34.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-16T20:33:27.18Z"
             },
             {
               "$type": "Document",
@@ -207,8 +201,7 @@
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\Testing.Designer.cs",
               "ViewState": "AQIAAG4CAAAAAAAAAADwv4YCAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T17:37:21.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-16T17:37:21.018Z"
             },
             {
               "$type": "Document",
@@ -230,8 +223,7 @@
               "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\Profile.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\Profile.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T20:29:47.716Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2024-04-16T20:29:47.716Z"
             },
             {
               "$type": "Document",
@@ -242,8 +234,7 @@
               "ToolTip": "C:\\Users\\nodio\\Desktop\\Gaish_Kyrsovaya_second\\Gaish_Kyrsovaya_second\\LogRegFrm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "Gaish_Kyrsovaya_second\\LogRegFrm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T14:14:49.618Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2024-06-16T14:14:49.618Z"
             },
             {
               "$type": "Document",

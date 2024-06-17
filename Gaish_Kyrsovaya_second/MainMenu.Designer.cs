@@ -42,10 +42,6 @@
             this.Menu = new System.Windows.Forms.Button();
             this.pnTickets = new System.Windows.Forms.Panel();
             this.btnTasks = new System.Windows.Forms.Button();
-            this.pnLikes = new System.Windows.Forms.Panel();
-            this.btnLikes = new System.Windows.Forms.Button();
-            this.pnSettings = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.pnExit = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.pnNews = new System.Windows.Forms.Panel();
@@ -61,8 +57,6 @@
             this.MenuContainer.SuspendLayout();
             this.pnMenu.SuspendLayout();
             this.pnTickets.SuspendLayout();
-            this.pnLikes.SuspendLayout();
-            this.pnSettings.SuspendLayout();
             this.pnExit.SuspendLayout();
             this.pnNews.SuspendLayout();
             this.pnAbout.SuspendLayout();
@@ -170,12 +164,10 @@
             this.MenuContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.MenuContainer.Controls.Add(this.pnMenu);
             this.MenuContainer.Controls.Add(this.pnTickets);
-            this.MenuContainer.Controls.Add(this.pnLikes);
-            this.MenuContainer.Controls.Add(this.pnSettings);
             this.MenuContainer.Controls.Add(this.pnExit);
             this.MenuContainer.Location = new System.Drawing.Point(3, 80);
             this.MenuContainer.Name = "MenuContainer";
-            this.MenuContainer.Size = new System.Drawing.Size(225, 228);
+            this.MenuContainer.Size = new System.Drawing.Size(225, 46);
             this.MenuContainer.TabIndex = 8;
             // 
             // pnMenu
@@ -226,58 +218,10 @@
             this.btnTasks.UseVisualStyleBackColor = false;
             this.btnTasks.Click += new System.EventHandler(this.btnTasks_Click);
             // 
-            // pnLikes
-            // 
-            this.pnLikes.Controls.Add(this.btnLikes);
-            this.pnLikes.Location = new System.Drawing.Point(3, 97);
-            this.pnLikes.Name = "pnLikes";
-            this.pnLikes.Size = new System.Drawing.Size(225, 41);
-            this.pnLikes.TabIndex = 5;
-            // 
-            // btnLikes
-            // 
-            this.btnLikes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.btnLikes.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnLikes.ForeColor = System.Drawing.Color.White;
-            this.btnLikes.Image = ((System.Drawing.Image)(resources.GetObject("btnLikes.Image")));
-            this.btnLikes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLikes.Location = new System.Drawing.Point(-4, -5);
-            this.btnLikes.Name = "btnLikes";
-            this.btnLikes.Size = new System.Drawing.Size(239, 50);
-            this.btnLikes.TabIndex = 2;
-            this.btnLikes.Text = "           Избранное";
-            this.btnLikes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLikes.UseVisualStyleBackColor = false;
-            this.btnLikes.Click += new System.EventHandler(this.btnLikes_Click);
-            // 
-            // pnSettings
-            // 
-            this.pnSettings.Controls.Add(this.btnSettings);
-            this.pnSettings.Location = new System.Drawing.Point(3, 144);
-            this.pnSettings.Name = "pnSettings";
-            this.pnSettings.Size = new System.Drawing.Size(225, 41);
-            this.pnSettings.TabIndex = 7;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(36)))));
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(-4, -5);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(239, 50);
-            this.btnSettings.TabIndex = 2;
-            this.btnSettings.Text = "           Настройки";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
             // pnExit
             // 
             this.pnExit.Controls.Add(this.btnExit);
-            this.pnExit.Location = new System.Drawing.Point(3, 191);
+            this.pnExit.Location = new System.Drawing.Point(3, 97);
             this.pnExit.Name = "pnExit";
             this.pnExit.Size = new System.Drawing.Size(225, 41);
             this.pnExit.TabIndex = 6;
@@ -301,7 +245,7 @@
             // pnNews
             // 
             this.pnNews.Controls.Add(this.btnNews);
-            this.pnNews.Location = new System.Drawing.Point(3, 314);
+            this.pnNews.Location = new System.Drawing.Point(3, 132);
             this.pnNews.Name = "pnNews";
             this.pnNews.Size = new System.Drawing.Size(225, 41);
             this.pnNews.TabIndex = 5;
@@ -326,7 +270,7 @@
             // pnAbout
             // 
             this.pnAbout.Controls.Add(this.btnAbout);
-            this.pnAbout.Location = new System.Drawing.Point(3, 361);
+            this.pnAbout.Location = new System.Drawing.Point(3, 179);
             this.pnAbout.Name = "pnAbout";
             this.pnAbout.Size = new System.Drawing.Size(225, 41);
             this.pnAbout.TabIndex = 7;
@@ -378,8 +322,6 @@
             this.MenuContainer.ResumeLayout(false);
             this.pnMenu.ResumeLayout(false);
             this.pnTickets.ResumeLayout(false);
-            this.pnLikes.ResumeLayout(false);
-            this.pnSettings.ResumeLayout(false);
             this.pnExit.ResumeLayout(false);
             this.pnNews.ResumeLayout(false);
             this.pnAbout.ResumeLayout(false);
@@ -401,10 +343,6 @@
         private System.Windows.Forms.Button Menu;
         private System.Windows.Forms.Panel pnTickets;
         private System.Windows.Forms.Button btnTasks;
-        private System.Windows.Forms.Panel pnLikes;
-        private System.Windows.Forms.Button btnLikes;
-        private System.Windows.Forms.Panel pnSettings;
-        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Panel pnExit;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel pnNews;

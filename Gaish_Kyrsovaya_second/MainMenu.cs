@@ -52,7 +52,7 @@ namespace Gaish_Kyrsovaya_second
             if (menuExpand == false)
             {
                 MenuContainer.Height += 10;
-                if (MenuContainer.Height >= 233)
+                if (MenuContainer.Height >= 140)
                 {
                     menuTransition.Stop();
                     menuExpand = true;
@@ -87,8 +87,6 @@ namespace Gaish_Kyrsovaya_second
 
                     pnProfile.Width = SideBar.Width;
                     pnTickets.Width = SideBar.Width;
-                    pnLikes.Width = SideBar.Width;
-                    pnSettings.Width = SideBar.Width;
                     pnExit.Width = SideBar.Width;
                     pnNews.Width = SideBar.Width;
                     pnAbout.Width = SideBar.Width;
@@ -105,8 +103,6 @@ namespace Gaish_Kyrsovaya_second
 
                     pnProfile.Width = SideBar.Width;
                     pnTickets.Width = SideBar.Width;
-                    pnLikes.Width = SideBar.Width;
-                    pnSettings.Width = SideBar.Width;
                     pnExit.Width = SideBar.Width;
                     pnNews.Width = SideBar.Width;
                     pnAbout.Width = SideBar.Width;
